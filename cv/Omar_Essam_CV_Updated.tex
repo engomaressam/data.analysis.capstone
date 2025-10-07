@@ -1,0 +1,309 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\definecolor{accentColor}{RGB}{41, 128, 185}
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{darkBlue}{RGB}{0, 47, 95}
+\definecolor{lightBlue}{RGB}{173, 216, 230}
+\definecolor{gradientStart}{RGB}{0, 79, 144}
+\definecolor{gradientEnd}{RGB}{41, 128, 185}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={Omar Essam El-Din Mohamed's CV},
+    pdfauthor={Omar Essam El-Din Mohamed},
+    colorlinks=true,
+    urlcolor=primaryColor
+}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{shapes, positioning, shadings, backgrounds}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+
+% Enhanced Section Formatting
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{primaryColor}}
+{\thesection}{1em}{}
+\titlespacing*{\section}
+{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+% Add a modern horizontal rule after each section title
+\titleformat{name=\section}
+  {\normalfont\Large\bfseries\color{primaryColor}}
+  {\thesection}{1em}{\color{primaryColor}\MakeUppercase{#1}\vspace{0.5ex}
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw[primaryColor, line width=2pt] (0,0) -- (\textwidth,0);
+    \draw[accentColor, line width=1pt] (0,-0.1) -- (\textwidth,-0.1);
+  \end{tikzpicture}
+  \vspace{0.3ex}}
+
+% Custom command for job titles
+\newcommand{\jobtitle}[4]{
+    \textbf{\textcolor{primaryColor}{#1}} | \textbf{#2} \hfill \textit{#3} \\
+    \textit{#4}
+}
+
+\begin{document}
+
+% Modern Header with gradient background
+\begin{center}
+    \begin{tikzpicture}[remember picture, overlay]
+        \shade[left color=lightBlue, right color=white, opacity=0.3] 
+        (current page.north west) rectangle (current page.north east |- 0,-3);
+    \end{tikzpicture}
+    \vspace{0.5cm}
+    {\Huge \textbf{\textcolor{primaryColor}{Omar Essam El-Din Mohamed}}} \\
+    \vspace{0.2cm}
+    {\Large \textcolor{accentColor}{Data Engineering \& Machine Learning Lead}} \\
+    \vspace{0.2cm}
+    \begin{tikzpicture}
+        \shade[left color=primaryColor, right color=accentColor] (0,0) rectangle (\textwidth,0.08);
+    \end{tikzpicture}
+    \vspace{0.2cm}
+    {\large \textcolor{darkBlue}{Zahraa El Maadi, Cairo, Egypt}} \\
+    \vspace{0.2cm}
+    \begin{tabular}{@{}c@{\hspace{1.5cm}}c@{}}
+        \textcolor{primaryColor}{\faPhone*} \hspace{0.2cm} +20 1004819774 & 
+        \href{https://www.linkedin.com/in/omar-essam-b602279b}{\textcolor{accentColor}{\faLinkedin} \hspace{0.2cm} LinkedIn} \\[0.15cm]
+        \href{mailto:eng.omar.e@gmail.com}{\textcolor{primaryColor}{\faEnvelope[regular]} \hspace{0.2cm} eng.omar.e@gmail.com} & 
+        \href{https://github.com/engomaressam}{\textcolor{accentColor}{\faGithub} \hspace{0.2cm} GitHub} \\[0.15cm]
+        \href{https://www.coursera.org/learner/eng-omar-essam}{\textcolor{primaryColor}{\faGraduationCap} \hspace{0.2cm} Coursera} & 
+        \href{https://www.credly.com/users/eng-omar-essam/skills}{\textcolor{accentColor}{\faCertificate} \hspace{0.2cm} Credly}
+    \end{tabular}
+    \vspace{0.4cm}
+\end{center}
+
+\section{Professional Summary}
+An accomplished Data Engineering and Machine Learning Lead with 6+ years of specialized experience in AI development, cloud architecture, and team leadership. Expert in building scalable data pipelines across AWS, Azure, and GCP, implementing advanced ML/AI solutions including RAG systems, deep learning models, and agentic AI. Proven track record of leading cross-functional teams using Agile methodologies, delivering enterprise-grade solutions, and driving digital transformation initiatives. Combines strong technical expertise with strategic project management to deliver innovative solutions that optimize business operations and enhance decision-making capabilities.
+
+\section{Core Competencies}
+
+\begin{tcolorbox}[enhanced, frame hidden, interior hidden, 
+    left=10pt, right=10pt, top=5pt, bottom=5pt]
+
+\begin{minipage}{0.48\textwidth}
+\textbf{\textcolor{primaryColor}{Cloud \& Infrastructure}}
+
+\vspace{0.8ex}
+\begin{itemize}[leftmargin=*, itemsep=0.2ex, topsep=0ex]
+    \item AWS (EC2, S3, Lambda, SageMaker, Redshift)
+    \item Azure (ML, Data Factory, Synapse, AKS)
+    \item GCP (BigQuery, Vertex AI, TPUs, GKE)
+    \item Kubernetes, Docker, Terraform
+\end{itemize}
+
+\vspace{1.2ex}
+\textbf{\textcolor{primaryColor}{Machine Learning \& AI}}
+
+\vspace{0.8ex}
+\begin{itemize}[leftmargin=*, itemsep=0.2ex, topsep=0ex]
+    \item Deep Learning (PyTorch, TensorFlow)
+    \item LLMs, RAG, Vector Databases
+    \item MLOps, Model Deployment
+    \item Computer Vision, NLP
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\textbf{\textcolor{primaryColor}{Data Engineering \& Analytics}}
+
+\vspace{0.8ex}
+\begin{itemize}[leftmargin=*, itemsep=0.2ex, topsep=0ex]
+    \item ETL/ELT Pipelines, Apache Airflow
+    \item Spark, Hadoop, Databricks, Snowflake
+    \item SQL, Python, R, Java
+    \item Power BI, Tableau, Advanced Analytics
+\end{itemize}
+
+\vspace{1.2ex}
+\textbf{\textcolor{primaryColor}{Leadership \& Project Management}}
+
+\vspace{0.8ex}
+\begin{itemize}[leftmargin=*, itemsep=0.2ex, topsep=0ex]
+    \item Agile/Scrum/Lean Methodologies
+    \item Team Leadership, Stakeholder Management
+    \item Jira, GitLab CI/CD, Jenkins
+    \item Risk Management, Strategic Planning
+\end{itemize}
+\end{minipage}
+
+\end{tcolorbox}
+
+\section{Professional Experience}
+
+\textbf{\textcolor{primaryColor}{Data Engineering \& Machine Learning Leadership}}
+
+\jobtitle{Data Engineering And Machine Learning Lead}{Rowad Modern Engineering}{Jan 2025 – Present}{Leading ML/AI initiatives and advanced analytics solutions}
+\begin{itemize}[leftmargin=1cm, itemsep=0.3ex]
+    \item Architected and deployed production-ready RAG chatbot using vector databases (Pinecone, Chroma) and LangChain, improving internal knowledge access by 60\%
+    \item Built comprehensive full-stack analytics platform integrating Oracle ERP with on-premises data warehouse, enabling real-time business intelligence and decision-making
+    \item Implemented advanced deep learning models using PyTorch and TensorFlow, including CNNs for image classification and transformer architectures for NLP tasks
+    \item Led cross-functional AI team of 8 engineers using Agile/Scrum methodologies, achieving 95\% sprint completion rate and reducing development cycles by 40\%
+    \item Leveraged NVIDIA 4090 GPUs for high-performance AI agent development, automating coding workflows and reducing manual debugging time by 70\%
+    \item Deployed agentic AI systems with goal-based and utility-based agents for autonomous task execution and workflow optimization
+    \item Implemented MLOps practices using Kubernetes, MLflow, and CI/CD pipelines (GitLab CI, Jenkins) for automated model deployment and monitoring
+    \item Mentored junior engineers in advanced ML techniques, cloud technologies, and best practices in data engineering and ML
+\end{itemize}
+
+\jobtitle{Data Engineering Lead}{Rowad Modern Engineering}{Nov 2022 – Dec 2024}{Scaling data infrastructure and leading engineering teams}
+\begin{itemize}[leftmargin=1cm, itemsep=0.3ex]
+    \item Established and led data engineering team of 12 professionals, implementing Agile practices with Scrum for project tracking and sprint management
+    \item Designed and deployed enterprise-scale data pipelines across AWS (S3, Redshift, Lambda), Azure (Data Factory, Synapse), and GCP (BigQuery, Dataflow)
+    \item Built real-time streaming data solutions using Apache Kafka and Spark, processing 10M+ records daily with 99.9\% uptime
+    \item Architected cloud-native data warehouse solutions using Snowflake and Databricks, reducing query response times by 75\%
+    \item Led stakeholder management and risk mitigation strategies, ensuring project delivery within budget and timeline constraints
+\end{itemize}
+
+\jobtitle{Data Scientist \& Scrum Master}{Rowad Modern Engineering}{May 2022 – Oct 2022}{Advanced analytics, predictive modeling, and agile team facilitation}
+\begin{itemize}[leftmargin=1cm, itemsep=0.3ex]
+    \item Developed sophisticated ML models for cash flow predictions using ensemble methods (XGBoost, Random Forest) and time series analysis
+    \item Implemented feature engineering pipelines with automated data preprocessing, achieving 15\% improvement in model accuracy
+    \item Facilitated Scrum ceremonies and coached cross-functional team of 6 members in Agile methodologies, improving sprint velocity by 25\%
+\end{itemize}
+
+\jobtitle{Senior Data Engineer \& DBA}{Rowad Modern Engineering}{Nov 2020 – Apr 2022}{Infrastructure automation, optimization, and database administration}
+\begin{itemize}[leftmargin=1cm, itemsep=0.3ex]
+    \item Automated complex business processes using Python and SQL, saving 200+ hours monthly through intelligent workflow optimization
+    \item Integrated data from multiple enterprise sources into centralized data warehouse including Oracle ERP, Oracle Unifier, CRM, Primavera P6 EPPM, and HR Hits systems
+    \item Managed database administration including user management, configuration optimization, table design, and performance monitoring across production systems
+\end{itemize}
+
+\jobtitle{Data Engineer}{Rowad Modern Engineering}{Jan 2020 – Oct 2020}{Infrastructure setup and data pipeline development}
+\begin{itemize}[leftmargin=1cm, itemsep=0.3ex]
+    \item Established on-premises server infrastructure and configured Apache Airflow and Spark for distributed data processing
+    \item Developed PL/SQL queries and ETL processes to extract and load data from Oracle ERP systems into data warehouse
+    \item Implemented database optimization strategies and backup procedures for critical business data
+\end{itemize}
+
+\newpage
+
+\textbf{\textcolor{primaryColor}{Construction \& Civil Engineering Leadership}}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Project Control Section Head} | Rowad Modern Engineering, Bridges Sector (Jan 2019 – Dec 2019)
+    \item \textbf{Senior Project Control Engineer} | Rowad Modern Engineering, Head Office (Aug 2018 – Dec 2018)
+    \item \textbf{Project Control Engineer} | Rowad Modern Engineering (Mar 2018 – Jul 2018)
+    \item \textbf{Planner} | Concrete Plus (Apr 2015 – Mar 2018) - Multi-site project baseline development
+    \item \textbf{Planner, QS Engineer} | Concrete Plus (Jan 2015 – Mar 2015)
+    \item \textbf{Technical Office, QS Engineer} | Concrete Plus (Aug 2014 – Dec 2014)
+    \item \textbf{Site Engineer} | Concrete Plus, Porto October Project (May 2014 – Jul 2014)
+    \item \textbf{Site Engineer Training} | Orascom Construction Industries (Mar 2014 – May 2014)
+\end{itemize}
+
+\section{Education}
+\textbf{Cairo University} | Bachelor of Science in Civil Engineering | May 2013 \\
+\textit{Overall Grade:} Good (B) | \textit{Project Grade:} Excellent (A) \\
+\textit{Graduation Project:} Steel Bridges Design
+
+\textbf{Orouba Language School} | High School Diploma | 98.9\% (405.5/410)
+
+\section{Advanced Technical Skills}
+
+\textbf{\textcolor{primaryColor}{AI \& Machine Learning:}}
+PyTorch, TensorFlow, Scikit-learn, Transformers (Hugging Face, ONNX, Transformers.js), XGBoost, LangChain, LlamaIndex, PEFT, RLHF/PPO/DPO, RAG, SFTTrainer, Lorax, SkyPilot, Llamafile, Computer Vision (CNNs, YOLO), NLP (BERT, GPT, T5, BLEU), Reinforcement Learning, Recommendation Systems, Advanced Clustering \\
+
+\textbf{\textcolor{primaryColor}{Cloud \& Infrastructure:}}
+AWS (SageMaker, Bedrock, Lambda, S3, Redshift), Azure (ML Studio, Synapse, OpenAI), GCP (Vertex AI, TPUs, Model Garden, BigQuery), Databricks (Unity Catalog, Delta Live Tables), Kubernetes, Docker, Terraform, CUDA, PyCUDA \\
+
+\textbf{\textcolor{primaryColor}{Data Engineering \& Analytics:}}
+Apache Spark, Hadoop, Airflow, Kafka, Snowflake, Delta Lake, Statistical Methods (ANOVA, t-tests, Regression Analysis), Model Evaluation (Cross-validation, KFold), Feature Engineering, Dimensionality Reduction \\
+
+\textbf{\textcolor{primaryColor}{Development \& Operations:}}
+Python, SQL, R, Java, C++, PostgreSQL, MongoDB, Vector Databases, MLflow, Jenkins, GitLab CI, pytest, IBM Watson OpenScale, Ansible, MPI4Py
+
+\section{Leadership \& Project Management}
+\textbf{\textcolor{primaryColor}{Methodologies:}} Agile, Scrum, Lean, Kanban, SAFe \\
+\textbf{\textcolor{primaryColor}{Tools:}} Jira, GitLab, Taiga, OpenProject, MS Project, Primavera P6 \\
+\textbf{\textcolor{primaryColor}{Expertise:}} Team Leadership, Stakeholder Management, Risk Assessment, Strategic Planning, Cross-functional Collaboration
+
+\section{Certifications \& Professional Development}
+
+\begin{tcolorbox}[enhanced, frame hidden,
+    left=8pt, right=8pt, top=3pt, bottom=8pt,
+    colback=lightGray!20]
+
+\begin{minipage}{0.48\textwidth}
+\textbf{\textcolor{primaryColor}{Advanced AI \& ML Specializations:}}
+\begin{itemize}[leftmargin=0.3cm, itemsep=0.1ex, topsep=0.2ex]
+    \item \textbf{Deep Learning Professional Certificate} (IBM) - 5 courses
+    \item \textbf{Natural Language Processing} (DeepLearning.AI) - 4 courses
+    \item \textbf{RAG for Generative AI Applications} (IBM) - 4 courses
+    \item \textbf{AI Developer Professional Certificate} (IBM)
+    \item \textbf{AI Engineering Professional Certificate} (IBM)
+    \item \textbf{LLMOps} (Duke University) - 5 courses
+\end{itemize}
+
+\textbf{\textcolor{primaryColor}{Data Science \& Analytics:}}
+\begin{itemize}[leftmargin=0.3cm, itemsep=0.1ex, topsep=0.2ex]
+    \item \textbf{Applied Data Science} (IBM) - 5 courses
+    \item \textbf{Data Analysis \& Visualization Foundations} (IBM)
+    \item \textbf{Introduction to Data Science} (IBM)
+    \item \textbf{AI Foundations for Business} (IBM)
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\textbf{\textcolor{primaryColor}{Cloud AI \& Development:}}
+\begin{itemize}[leftmargin=0.3cm, itemsep=0.1ex, topsep=0.2ex]
+    \item \textbf{Google Prompting Essentials} (Google) - 4 courses
+    \item \textbf{Modern Project Leadership} (Coursera)
+    \item \textbf{ChatGPT API for Developers}
+\end{itemize}
+
+\textbf{\textcolor{primaryColor}{Professional \& Technical:}}
+\begin{itemize}[leftmargin=0.3cm, itemsep=0.1ex, topsep=0.2ex]
+    \item \textbf{Certified Data Scientist Professional} (Epsilon AI)
+    \item \textbf{Project Management Professional (PMP)}
+    \item \textbf{CCNA \& CCNP Networking}
+    \item \textbf{Python Programming Advanced}
+    \item \textbf{Primavera P6 Project Management}
+    \item \textbf{Steel Bridges Design Specialist}
+\end{itemize}
+
+\vspace{0.2cm}
+\begin{center}
+\textbf{\textcolor{accentColor}{\textit{Total: 12+ Specializations | 45+ Certificates}}}
+\end{center}
+\end{minipage}
+
+\end{tcolorbox}
+
+\section{Personal Projects \& Achievements}
+\begin{itemize}[leftmargin=*, itemsep=0.4ex]
+    \item \textbf{Creative Leadership:} Guitarist in Iron Maiden tribute band, demonstrating artistic creativity and team collaboration
+    \item \textbf{Digital Content Creation:} Built YouTube channel to 100,000+ subscribers, showcasing content strategy and audience engagement
+    \item \textbf{Community Building:} Co-founded social media group ESS, developing community management and digital marketing skills
+    \item \textbf{Media \& Communication:} Co-hosted political podcast, enhancing public speaking and content creation abilities
+    \item \textbf{Creative Writing:} Authored two science fiction novels, demonstrating storytelling and creative thinking capabilities
+    \item \textbf{Community Service:} Active in street animal rescue operations in Maadi, showing commitment to social responsibility
+\end{itemize}
+
+\section{Languages}
+\textbf{Arabic:} Native Proficiency | \textbf{English:} Professional Working Proficiency (Fluent)
+
+\vfill
+\begin{center}
+    \textcolor{primaryColor}{\textit{References available upon request}}
+\end{center}
+
+\end{document}

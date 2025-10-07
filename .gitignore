@@ -1,0 +1,22 @@
+# Ignore Kaggle credentials
+kaggle/kaggle.json
+
+# Ignore large data directories
+data/raw/
+data/downloaded/
+data/processed/
+
+# Ignore Mac resource forks and system files
+**/__MACOSX/
+**/.DS_Store
+
+# Ignore temporary files
+*.tmp
+*.log
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore notebooks checkpoints
+.ipynb_checkpoints/

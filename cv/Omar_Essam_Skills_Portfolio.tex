@@ -1,0 +1,292 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\definecolor{accentColor}{RGB}{41, 128, 185}
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{darkBlue}{RGB}{0, 47, 95}
+\definecolor{lightBlue}{RGB}{173, 216, 230}
+\definecolor{gradientStart}{RGB}{0, 79, 144}
+\definecolor{gradientEnd}{RGB}{41, 128, 185}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={Omar Essam El-Din Mohamed - Technical Skills Portfolio},
+    pdfauthor={Omar Essam El-Din Mohamed},
+    colorlinks=true,
+    urlcolor=primaryColor
+}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{shapes, positioning, shadings, backgrounds}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{multicol}
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+
+% Enhanced Section Formatting
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{primaryColor}}
+{\thesection}{1em}{}
+\titlespacing*{\section}
+{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+% Subsection Formatting
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{accentColor}}
+{\thesubsection}{1em}{}
+\titlespacing*{\subsection}
+{0pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% Custom command for skill categories
+\newcommand{\skillcat}[1]{%
+    \textbf{\color{darkBlue}#1}%
+}
+
+% Custom command for skill items
+\newcommand{\skillitem}[1]{%
+    \textcolor{black}{#1}%
+}
+
+% Header styling (matching CV format)
+\newcommand{\header}{%
+    \begin{center}
+        \begin{tikzpicture}[remember picture, overlay]
+            \shade[left color=lightBlue, right color=white, opacity=0.3] 
+            (current page.north west) rectangle (current page.north east |- 0,-3);
+        \end{tikzpicture}
+        \vspace{0.5cm}
+        {\Huge \textbf{\textcolor{primaryColor}{Omar Essam El-Din Mohamed}}} \\
+        \vspace{0.2cm}
+        {\Large \textcolor{accentColor}{Data Engineering \& Machine Learning Lead}} \\
+        \vspace{0.2cm}
+        \begin{tikzpicture}
+            \shade[left color=primaryColor, right color=accentColor] (0,0) rectangle (\textwidth,0.08);
+        \end{tikzpicture}
+        \vspace{0.2cm}
+        {\large \textcolor{darkBlue}{Technical Skills Portfolio}} \\
+        \vspace{0.4cm}
+    \end{center}
+}
+
+\begin{document}
+
+\header
+
+\vspace{0.5cm}
+
+\section{Programming Languages \& Databases}
+
+\begin{tcolorbox}[colback=lightBlue!10, colframe=primaryColor, arc=3mm, boxrule=1pt]
+\begin{multicols}{2}
+\skillcat{Programming Languages:} \\
+\skillitem{• Python (Advanced)} \\
+\skillitem{• SQL (Expert Level)} \\
+\skillitem{• JavaScript \& HTML/CSS} \\
+\skillitem{• PL/SQL} \\
+
+\columnbreak
+
+\skillcat{Databases:} \\
+\skillitem{• MySQL \& PostgreSQL} \\
+\skillitem{• Microsoft SQL Server} \\
+\skillitem{• Oracle Database} \\
+\skillitem{• MongoDB \& Firestore (NoSQL)} \\
+\skillitem{• BigTable} \\
+\end{multicols}
+\end{tcolorbox}
+
+\section{Data Engineering \& Analytics}
+
+\begin{tcolorbox}[colback=lightGray!50, colframe=accentColor, arc=3mm, boxrule=1pt]
+\begin{multicols}{2}
+\skillcat{Data Pipeline \& Processing:} \\
+\skillitem{• ETL/ELT Pipelines} \\
+\skillitem{• Apache Airflow \& Kafka} \\
+\skillitem{• Apache Spark \& MLlib} \\
+\skillitem{• Hadoop HDFS} \\
+\skillitem{• Data Ingestion \& Transformation} \\
+\skillitem{• Feature Engineering \& Data Mining} \\
+
+\columnbreak
+
+\skillcat{Data Warehousing \& Storage:} \\
+\skillitem{• Data Warehouse Architecture} \\
+\skillitem{• Snowflake \& Azure Databricks} \\
+\skillitem{• Delta Live Tables \& Unity Catalog} \\
+\skillitem{• Data Modeling \& Dimensional Modeling} \\
+\skillitem{• EDA \& Hypothesis Testing} \\
+\skillitem{• Statistical Modeling \& Time Series} \\
+\end{multicols}
+\end{tcolorbox}
+
+\section{Cloud Platforms \& Infrastructure}
+
+\begin{tcolorbox}[colback=lightBlue!10, colframe=primaryColor, arc=3mm, boxrule=1pt]
+\begin{multicols}{3}
+\skillcat{Amazon Web Services:} \\
+\skillitem{• S3 Storage \& Lambda} \\
+\skillitem{• Bedrock \& EC2/ECS} \\
+
+\skillcat{Microsoft Azure:} \\
+\skillitem{• Azure Databricks} \\
+\skillitem{• Data Factory \& Functions} \\
+\skillitem{• Azure ML Studio} \\
+
+\skillcat{Google Cloud Platform:} \\
+\skillitem{• Compute Engine \& GKE} \\
+\skillitem{• Cloud Run \& Functions} \\
+\skillitem{• BigQuery \& Vertex AI} \\
+\skillitem{• TPUs \& Cloud Spanner} \\
+\end{multicols}
+\end{tcolorbox}
+
+\section{DevOps \& Development Tools}
+
+\begin{tcolorbox}[colback=lightGray!50, colframe=accentColor, arc=3mm, boxrule=1pt]
+\begin{multicols}{2}
+\skillcat{Containerization \& Orchestration:} \\
+\skillitem{• Docker \& NVIDIA Docker} \\
+\skillitem{• Kubernetes \& Microservices} \\
+\skillitem{• Container Orchestration} \\
+
+\columnbreak
+
+\skillcat{CI/CD \& Version Control:} \\
+\skillitem{• Jenkins \& Git} \\
+\skillitem{• Ansible \& DevOps Practices} \\
+\skillitem{• Unit Testing (pytest, unittest)} \\
+\end{multicols}
+\end{tcolorbox}
+
+\section{Data Visualization \& Business Intelligence}
+
+\begin{tcolorbox}[colback=lightBlue!10, colframe=primaryColor, arc=3mm, boxrule=1pt]
+\begin{multicols}{2}
+\skillcat{Visualization Libraries:} \\
+\skillitem{• Matplotlib \& Seaborn} \\
+\skillitem{• Pandas \& NumPy} \\
+\skillitem{• Plotly} \\
+
+\columnbreak
+
+\skillcat{BI Tools:} \\
+\skillitem{• Microsoft Power BI \& Tableau} \\
+\skillitem{• IBM Cognos Analytics} \\
+\skillitem{• Google Data Studio \& Excel} \\
+\end{multicols}
+\end{tcolorbox}
+
+\section{Web Development \& APIs}
+
+\begin{tcolorbox}[colback=lightGray!50, colframe=accentColor, arc=3mm, boxrule=1pt]
+\begin{multicols}{2}
+\skillcat{Web Frameworks:} \\
+\skillitem{• Flask \& Django (Python)} \\
+\skillitem{• FastAPI \& React.js} \\
+
+\columnbreak
+
+\skillcat{API Development:} \\
+\skillitem{• REST APIs \& GraphQL} \\
+\skillitem{• API Design \& Integration} \\
+\skillitem{• Microservices Communication} \\
+\end{multicols}
+\end{tcolorbox}
+
+\section{Artificial Intelligence \& Machine Learning}
+
+\begin{tcolorbox}[colback=lightBlue!10, colframe=primaryColor, arc=3mm, boxrule=1pt]
+\begin{multicols}{2}
+\skillcat{Generative AI \& LLMs:} \\
+\skillitem{• Large Language Models (LLMs)} \\
+\skillitem{• Retrieval-Augmented Generation (RAG)} \\
+\skillitem{• Vector Databases \& Embeddings} \\
+\skillitem{• Prompt Engineering \& Fine-tuning} \\
+\skillitem{• PEFT, RLHF, PPO/DPO Optimization} \\
+\skillitem{• Instruction Tuning} \\
+
+\columnbreak
+
+\skillcat{ML Frameworks \& Algorithms:} \\
+\skillitem{• TensorFlow \& PyTorch} \\
+\skillitem{• Scikit-learn \& Keras} \\
+\skillitem{• Hugging Face Transformers} \\
+\skillitem{• LangChain \& ONNX} \\
+\skillitem{• Supervised/Unsupervised Learning} \\
+\skillitem{• Decision Trees, Random Forest, XGBoost} \\
+\end{multicols}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=lightGray!50, colframe=accentColor, arc=3mm, boxrule=1pt]
+\begin{multicols}{2}
+\skillcat{Deep Learning \& Computer Vision:} \\
+\skillitem{• Neural Networks \& CNNs/RNNs} \\
+\skillitem{• Transformer Architecture} \\
+\skillitem{• Image Classification \& Segmentation} \\
+\skillitem{• Object Detection \& Processing} \\
+\skillitem{• Reinforcement Learning} \\
+
+\columnbreak
+
+\skillcat{Specialized AI Technologies:} \\
+\skillitem{• GPU Computing (CUDA, PyCUDA)} \\
+\skillitem{• AI Agent Development} \\
+\skillitem{• High-Performance Computing} \\
+\skillitem{• Multiprocessing \& Distributed Computing} \\
+\skillitem{• Model Deployment \& MLOps} \\
+\end{multicols}
+\end{tcolorbox}
+
+\section{Enterprise Systems \& Model Deployment}
+
+\begin{tcolorbox}[colback=lightBlue!10, colframe=primaryColor, arc=3mm, boxrule=1pt]
+\begin{multicols}{2}
+\skillcat{Enterprise Integration:} \\
+\skillitem{• Oracle ERP Systems Integration} \\
+\skillitem{• Enterprise Data Architecture} \\
+\skillitem{• Business Process Automation} \\
+\skillitem{• RPA (UiPath)} \\
+
+\columnbreak
+
+\skillcat{Model Deployment \& Monitoring:} \\
+\skillitem{• Model Serving \& Inference} \\
+\skillitem{• IBM Watson Studio/ML} \\
+\skillitem{• Performance Monitoring \& Drift Detection} \\
+\skillitem{• Cross Validation \& Metrics (RMSE, F1)} \\
+\end{multicols}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}
+    \shade[left color=primaryColor, right color=accentColor] 
+        (0,0) rectangle (\textwidth, 0.6);
+    \node[white, font=\large\bfseries] at (\textwidth/2, 0.3) 
+        {Continuous Learning \& Innovation in AI/ML Technologies};
+\end{tikzpicture}
+\end{center}
+
+\end{document}
