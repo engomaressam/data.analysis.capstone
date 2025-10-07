@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyclistic Case Study Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22d3ee;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; background: var(--bg); color: var(--text); }
+    header { padding: 32px 24px; border-bottom: 1px solid #1f2937; }
+    header h1 { margin: 0 0 8px; font-size: 28px; }
+    header p { margin: 0; color: var(--muted); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .card { background: var(--card); border: 1px solid #1f2937; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+    .card a { color: inherit; text-decoration: none; display: block; }
+    .thumb { display: flex; align-items: center; justify-content: center; background: #0b1020; height: 180px; }
+    .thumb img { max-width: 95%; max-height: 95%; }
+    .meta { padding: 12px 14px; border-top: 1px solid #1f2937; }
+    .meta h3 { margin: 0 0 6px; font-size: 16px; }
+    .meta p { margin: 0; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 28px; }
+    .links { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .linkcard { padding: 14px; border: 1px solid #1f2937; border-radius: 10px; background: var(--card); }
+    .linkcard a { color: var(--accent); }
+    footer { padding: 24px; color: var(--muted); }
+    code { background: #0b1020; color: var(--accent); padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cyclistic Bike-Share Case Study</h1>
+    <p>Report, SVG figures gallery, CSV tables index, and reproducibility (Python and R) for Kaggle publishing.</p>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>Report & Notebooks</h2>
+      <div class="links">
+        <div class="linkcard"><strong>Report</strong><br><a href="../documentation/case_study_report_template.md">documentation/case_study_report_template.md</a></div>
+        <div class="linkcard"><strong>Python Notebook</strong><br><a href="./kaggle_portfolio_notebook.ipynb">portfolio/kaggle_portfolio_notebook.ipynb</a></div>
+        <div class="linkcard"><strong>R Notebook</strong><br><a href="./kaggle_portfolio_notebook.Rmd">portfolio/kaggle_portfolio_notebook.Rmd</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Figures (SVG Gallery)</h2>
+      <div class="grid">
+        <div class="card">
+          <a href="./assets/figures/ride_duration.svg" target="_blank">
+            <div class="thumb"><img src="./assets/figures/ride_duration.svg" alt="Ride Duration"></div>
+            <div class="meta"><h3>Ride Duration</h3><p>Distribution and comparative analysis</p></div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="./assets/figures/comparative_analysis.svg" target="_blank">
+            <div class="thumb"><img src="./assets/figures/comparative_analysis.svg" alt="Comparative Analysis"></div>
+            <div class="meta"><h3>Comparative Analysis</h3><p>Members vs Casual metrics</p></div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="./assets/figures/time_patterns.svg" target="_blank">
+            <div class="thumb"><img src="./assets/figures/time_patterns.svg" alt="Time Patterns"></div>
+            <div class="meta"><h3>Time Patterns</h3><p>Hourly, daily, and monthly usage</p></div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="./assets/figures/stations.svg" target="_blank">
+            <div class="thumb"><img src="./assets/figures/stations.svg" alt="Stations"></div>
+            <div class="meta"><h3>Top Stations</h3><p>Start and end stations by usage</p></div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="./assets/figures/member_types.svg" target="_blank">
+            <div class="thumb"><img src="./assets/figures/member_types.svg" alt="Member Types"></div>
+            <div class="meta"><h3>Member Types</h3><p>Distribution by rider category</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tables (CSV Index)</h2>
+      <div class="links">
+        <div class="linkcard"><a href="./assets/tables/missing_summary.csv">missing_summary.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/duration_stats.csv">duration_stats.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/hourly_usage.csv">hourly_usage.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/daily_usage.csv">daily_usage.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/weekend_usage.csv">weekend_usage.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/monthly_usage.csv">monthly_usage.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/time_patterns.csv">time_patterns.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/top_start_stations.csv">top_start_stations.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/top_end_stations.csv">top_end_stations.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/top_stations_member.csv">top_stations_member.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/bike_preferences.csv">bike_preferences.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/bike_percentages.csv">bike_percentages.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/comparison_metrics.csv">comparison_metrics.csv</a></div>
+        <div class="linkcard"><a href="./assets/tables/member_distribution.csv">member_distribution.csv</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Reproducibility (Local & Kaggle)</h2>
+      <div class="linkcard">
+        <p><strong>Local</strong></p>
+        <p>Install: <code>pip install pandas numpy matplotlib seaborn</code></p>
+        <p>Dataset path: <code>data/processed/cyclistic_cleaned.csv</code> (generated by <a href="../analysis/data_cleaning/build_clean_dataset.py">build_clean_dataset.py</a>)</p>
+        <p>Run EDA: <code>python ../analysis/exploratory/cyclistic_eda.py</code></p>
+      </div>
+      <div class="linkcard">
+        <p><strong>Kaggle (Python)</strong></p>
+        <p>Upload <code>portfolio/kaggle_portfolio_notebook.ipynb</code> and attach the dataset, using path <code>/kaggle/input/&lt;dataset-name&gt;/cyclistic_cleaned.csv</code>.</p>
+      </div>
+      <div class="linkcard">
+        <p><strong>Kaggle (R)</strong></p>
+        <p>Upload <code>portfolio/kaggle_portfolio_notebook.Rmd</code> and attach the dataset, using path <code>/kaggle/input/&lt;dataset-name&gt;/cyclistic_cleaned.csv</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>© Cyclistic Case Study Portfolio. Assets mirrored from analysis/exploratory into portfolio/assets.</small>
+  </footer>
+</body>
+</html>
