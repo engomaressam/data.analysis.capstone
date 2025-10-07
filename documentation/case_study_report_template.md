@@ -1,4 +1,4 @@
-# Cyclistic Bike Share Analysis - Case Study Report
+# Case Study: Cyclistic Bike-Share Analysis
 
 ## Executive Summary
 
@@ -105,7 +105,7 @@ Members vs Casual ride duration patterns were analyzed using cleaned data and su
 - Casual riders exhibit longer, leisure-oriented rides; members show shorter, commute-oriented rides
 
 **Visualization**: Duration distribution and box plots
-- Figures: analysis/exploratory/figures/ride_duration.svg, analysis/exploratory/figures/comparative_analysis.svg
+- Figure references: analysis/exploratory/figures/ride_duration.svg, analysis/exploratory/figures/comparative_analysis.svg
 - Tables: analysis/exploratory/duration_stats.csv
 
 ### 4.2 Time-Based Usage Patterns
@@ -120,7 +120,7 @@ Members vs Casual ride duration patterns were analyzed using cleaned data and su
 - Monthly usage variations observed; higher ridership during warmer months (contextual)
 
 **Visualization**: Time-of-day and day-type charts
-- Figures: analysis/exploratory/figures/time_patterns.svg, analysis/exploratory/figures/comparative_analysis.svg
+- Figure references: analysis/exploratory/figures/time_patterns.svg, analysis/exploratory/figures/comparative_analysis.svg
 - Tables: analysis/exploratory/hourly_usage.csv, analysis/exploratory/daily_usage.csv, analysis/exploratory/weekend_usage.csv, analysis/exploratory/monthly_usage.csv, analysis/exploratory/time_patterns.csv
 
 ### 4.3 Geographic Analysis
@@ -129,7 +129,7 @@ Members vs Casual ride duration patterns were analyzed using cleaned data and su
 - Distinct clustering patterns by rider type observed
 
 **Visualization**: Top stations bar charts
-- Figures: analysis/exploratory/figures/stations.svg
+- Figure references: analysis/exploratory/figures/stations.svg
 - Tables: analysis/exploratory/top_start_stations.csv, analysis/exploratory/top_end_stations.csv, analysis/exploratory/top_stations_member.csv
 
 ### 4.4 Bike Type Preferences
@@ -139,7 +139,7 @@ Members vs Casual ride duration patterns were analyzed using cleaned data and su
 - Members and casual riders both favor electric bikes; implications for fleet and pricing
 
 **Visualization**: Member distribution and comparative charts
-- Figures: analysis/exploratory/figures/member_types.svg, analysis/exploratory/figures/comparative_analysis.svg
+- Figure references: analysis/exploratory/figures/member_types.svg, analysis/exploratory/figures/comparative_analysis.svg
 - Tables: analysis/exploratory/bike_preferences.csv, analysis/exploratory/bike_percentages.csv, analysis/exploratory/comparison_metrics.csv
 
 ---
@@ -308,6 +308,7 @@ By leveraging these insights, Cyclistic can develop more effective marketing str
 - Visualization files (SVG) in analysis/exploratory/figures
 - Mirrored assets for publishing in portfolio/assets (figures and tables)
 - Analysis code (R)
+- Kaggle notebooks: portfolio/kaggle_portfolio_notebook.ipynb (Python), portfolio/kaggle_portfolio_notebook.Rmd (R)
 - Visualization files (Tableau)
 
 ### Appendix B: Additional Charts and Tables
