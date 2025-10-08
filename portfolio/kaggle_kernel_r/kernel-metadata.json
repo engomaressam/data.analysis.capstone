@@ -1,0 +1,14 @@
+{
+  "title": "Cyclistic EDA Portfolio (R)",
+  "id": "engomaressam/cyclistic-eda-portfolio-r",
+  "code_file": "kaggle_portfolio_notebook.Rmd",
+  "language": "rmarkdown",
+  "kernel_type": "script",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": ["engomaressam/cyclistic-eda-derived-metrics"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

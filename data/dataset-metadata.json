@@ -1,0 +1,26 @@
+{
+  "title": "Cyclistic Bike Share Data - 2024",
+  "id": "engomaressam/cyclistic-bike-share-data---2024",
+  "licenses": [
+    {
+      "name": "other"
+    }
+  ],
+  "keywords": [
+    "bike-share",
+    "transportation",
+    "chicago",
+    "divvy",
+    "data-analysis",
+    "google-capstone"
+  ],
+  "collaborators": [],
+  "data": [
+    {
+      "description": "cyclistic_cleaned.csv",
+      "name": "cyclistic_cleaned.csv",
+      "totalBytes": 1301197811,
+      "columns": []
+    }
+  ]
+}

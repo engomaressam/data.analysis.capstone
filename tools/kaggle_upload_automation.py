@@ -9,6 +9,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+import shutil
 
 class KaggleUploader:
     def __init__(self, credentials_path="kaggle/kaggle.json"):
@@ -127,6 +128,74 @@ class KaggleUploader:
         print("📓 Listing your notebooks:")
         return self.run_kaggle_command("kaggle kernels list --mine")
 
+    def ensure_kaggle_cli_path(self):
+        """Ensure Kaggle CLI is available on PATH for subprocess calls."""
+        if shutil.which("kaggle"):
+            return True
+        # Try common per-user Scripts path for Windows (Python 3.13)
+        user_scripts = os.path.join(os.environ.get("USERPROFILE", ""), "AppData", "Roaming", "Python", "Python313", "Scripts")
+        kaggle_exe = os.path.join(user_scripts, "kaggle.exe")
+        if os.path.exists(kaggle_exe):
+            os.environ["PATH"] = user_scripts + os.pathsep + os.environ.get("PATH", "")
+            return True
+        print("❌ Kaggle CLI not found. Please ensure 'kaggle' is installed and on PATH.")
+        print("   Try: pip install --user kaggle")
+        return False
+
+    def create_or_update_dataset(self, dataset_dir, version_message="Automated dataset update"):
+        """Create a new dataset or update existing dataset version using Kaggle CLI."""
+        dataset_dir = Path(dataset_dir)
+        metadata_path = dataset_dir / "dataset-metadata.json"
+        if not metadata_path.exists():
+            print(f"❌ dataset-metadata.json not found in {dataset_dir}. Aborting.")
+            return False
+        print(f"📁 Ensuring dataset up to date: {dataset_dir}")
+        # Try create first
+        create_cmd = f"kaggle datasets create -p {dataset_dir}"
+        result_create = subprocess.run(create_cmd, shell=True, capture_output=True, text=True)
+        if result_create.returncode == 0:
+            print(f"✅ Dataset created: {dataset_dir}")
+            if result_create.stdout:
+                print(f"Output: {result_create.stdout}")
+            return True
+        # If create failed because already exists, version it
+        stderr = (result_create.stderr or "").lower()
+        if "already exists" in stderr or "409" in stderr or "conflict" in stderr:
+            print("ℹ️ Dataset already exists, creating a new version...")
+            version_cmd = f"kaggle datasets version -p {dataset_dir} -m \"{version_message}\""
+            result_version = subprocess.run(version_cmd, shell=True, capture_output=True, text=True)
+            if result_version.returncode == 0:
+                print("✅ Dataset version created successfully")
+                if result_version.stdout:
+                    print(f"Output: {result_version.stdout}")
+                return True
+            print("❌ Dataset version failed")
+            print(f"Error: {result_version.stderr}")
+            return False
+        # Unknown failure
+        print("❌ Dataset create failed")
+        print(f"Error: {result_create.stderr}")
+        return False
+
+    def push_kernel(self, kernel_dir):
+        """Push a Kaggle kernel from a directory containing kernel-metadata.json."""
+        kernel_dir = Path(kernel_dir)
+        metadata_path = kernel_dir / "kernel-metadata.json"
+        if not metadata_path.exists():
+            print(f"❌ kernel-metadata.json not found in {kernel_dir}")
+            return False
+        print(f"🚀 Pushing Kaggle kernel from: {kernel_dir}")
+        push_cmd = f"kaggle kernels push -p {kernel_dir}"
+        result_push = subprocess.run(push_cmd, shell=True, capture_output=True, text=True)
+        if result_push.returncode == 0:
+            print("✅ Kernel pushed successfully")
+            if result_push.stdout:
+                print(f"Output: {result_push.stdout}")
+            return True
+        print("❌ Kernel push failed")
+        print(f"Error: {result_push.stderr}")
+        return False
+
 def main():
     """Main function to demonstrate Kaggle upload automation"""
     print("🚀 Kaggle Upload Automation")
@@ -134,23 +203,21 @@ def main():
     
     # Initialize uploader
     uploader = KaggleUploader()
+
+    # Ensure Kaggle CLI is available
+    uploader.ensure_kaggle_cli_path()
     
-    # Example: Create dataset
-    print("\n📁 Creating Cyclistic Dataset...")
-    dataset_success = uploader.create_dataset(
-        dataset_name="Cyclistic Bike Share Data - 2024",
-        description="Historical bike-share trip data from Chicago's Divvy system for data analytics analysis",
-        files_path="data/processed",  # Path to your processed data files
-        tags=["bike-share", "transportation", "chicago", "divvy", "data-analysis", "google-capstone"]
+    # Create or update dataset from portfolio directory
+    print("\n📁 Creating/Updating Cyclistic Dataset...")
+    uploader.create_or_update_dataset(
+        dataset_dir="portfolio/kaggle_dataset",
+        version_message="Automated update from local portfolio"
     )
     
-    # Example: Upload notebook (manual process)
-    print("\n📓 Notebook Upload Instructions...")
-    notebook_success = uploader.upload_notebook(
-        notebook_path="portfolio/kaggle_portfolio_notebook.ipynb",
-        notebook_name="Cyclistic Bike Share Analysis - Data Analytics Capstone",
-        description="Comprehensive analysis of bike-share data to understand member vs casual rider behavior patterns",
-        tags=["data-analysis", "python", "pandas", "matplotlib", "seaborn", "business-intelligence", "google-capstone"]
+    # Push Python kernel (automated via CLI)
+    print("\n📓 Pushing Python Kernel...")
+    uploader.push_kernel(
+        kernel_dir="portfolio/kaggle_kernel_python"
     )
     
     # List current datasets and notebooks
@@ -163,8 +230,8 @@ def main():
     print("\n✅ Upload automation complete!")
     print("\n📋 Next Steps:")
     print("1. Check your datasets at: https://www.kaggle.com/datasets")
-    print("2. Upload notebook manually at: https://www.kaggle.com/code")
-    print("3. Link your notebook to your dataset")
+    print("2. Review your kernels at: https://www.kaggle.com/code")
+    print("3. Link your notebook to your dataset if needed")
     print("4. Run all cells to test")
     print("5. Make public and share!")
 

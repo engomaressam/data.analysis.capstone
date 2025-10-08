@@ -1,0 +1,8 @@
+{
+  "title": "Cyclistic EDA Derived Metrics",
+  "subtitle": "Exploratory analysis outputs (CSV) for Cyclistic bike-share case study",
+  "description": "Derived tables from exploratory data analysis of the Cyclistic bike-share trips, including usage patterns by hour/day/month, membership distribution, station rankings, and duration statistics.",
+  "id": "engomaressam/cyclistic-eda-derived-metrics",
+  "licenses": [{"name": "CC-BY-4.0"}],
+  "keywords": ["cyclistic", "bike-share", "eda", "chicago", "tutorial"]
+}

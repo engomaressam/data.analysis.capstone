@@ -30,7 +30,9 @@ Welcome. This page links the report, figures, tables, and notebooks (both Python
 
 ## Notebooks (for Kaggle publishing)
 - Python notebook: portfolio/kaggle_portfolio_notebook.ipynb
+  - Kaggle: https://www.kaggle.com/code/engomaressam/cyclistic-eda-portfolio-python
 - R notebook: portfolio/kaggle_portfolio_notebook.Rmd
+  - Kaggle: https://www.kaggle.com/code/engomaressam/cyclistic-eda-portfolio-r
 
 ## How to reproduce (local)
 1. Ensure Python 3.10+ with pip installed.
@@ -42,9 +44,12 @@ Welcome. This page links the report, figures, tables, and notebooks (both Python
 5. Outputs will be saved to analysis/exploratory and mirrored under portfolio/assets.
 
 ## How to publish on Kaggle (Python and R)
-1. Upload the Python notebook (portfolio/kaggle_portfolio_notebook.ipynb) to Kaggle Notebooks.
-2. Upload the R notebook (portfolio/kaggle_portfolio_notebook.Rmd) to Kaggle Notebooks.
-3. Attach the relevant dataset(s) in Kaggle or reference public Divvy system data.
+1. Use the published notebooks:
+   - Python: https://www.kaggle.com/code/engomaressam/cyclistic-eda-portfolio-python
+   - R: https://www.kaggle.com/code/engomaressam/cyclistic-eda-portfolio-r
+2. Attach the dataset: https://www.kaggle.com/datasets/engomaressam/cyclistic-eda-derived-metrics
+3. Ensure notebook paths reference /kaggle/input/cyclistic-eda-derived-metrics/cyclistic_cleaned.csv
+4. Attach the relevant dataset(s) in Kaggle or reference public Divvy system data.
 4. Ensure output paths inside the notebooks point to the working directory in Kaggle (adjust relative paths as needed).
 
 ## Notes
